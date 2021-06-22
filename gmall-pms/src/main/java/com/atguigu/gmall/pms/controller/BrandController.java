@@ -75,7 +75,6 @@ public class BrandController {
     @ApiOperation("修改")
     public ResponseVo update(@RequestBody BrandEntity brand){
 		brandService.updateById(brand);
-
         return ResponseVo.ok();
     }
 
@@ -86,7 +85,6 @@ public class BrandController {
     @ApiOperation("删除")
     public ResponseVo delete(@RequestBody List<Long> ids){
 		brandService.removeByIds(ids);
-
         return ResponseVo.ok();
     }
 
