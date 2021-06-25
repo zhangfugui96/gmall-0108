@@ -33,6 +33,14 @@ public class SpuController {
 
     @Autowired
     private SpuService spuService;
+@GetMapping("category/{categoryId}")
+public ResponseVo<PageResultVo> querySpuByCid(@PathVariable("categoryId") Long categoryId,
+                                              PageParamVo pageParamVo){
+    PageResultVo resultVo=  this.spuService.querySpuByCid(categoryId,pageParamVo);
+    return ResponseVo.ok(resultVo);
+}
+
+
 
     /**
      * 列表

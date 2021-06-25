@@ -34,15 +34,21 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-
     @GetMapping("parent/{parentId}")
+    public ResponseVo<List<CategoryEntity>> queryCategoryByPid(@PathVariable("parentId") Long parentId){
+        List<CategoryEntity> categoryEntities = this.categoryService.queryCategoryByPid(parentId);
+        return ResponseVo.ok(categoryEntities);
+    }
+
+
+   /* @GetMapping("parent/{parentId}")
     @ApiOperation("商品分类树状结构")
     public  ResponseVo<List<CategoryEntity>> queryCategoryByPid(@PathVariable("parentId") Long parentId){
 
         List<CategoryEntity> categoryEntities= this.categoryService.queryCategoryByPid(parentId);
         return ResponseVo.ok(categoryEntities);
 
-    }
+    }*/
 
 
     /**
